@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+
+.logo {
+  float: left;
+  text-align: left;
+  margin-left: 5%;
+  font-size: 28px;
+  font-family: 'Lato', sans-serif;
+   border-bottom: 2px solid #382428;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+a:hover {
+  color: #A99FA1;
+}
+
+
+
+#home
+{
+	margin-left:400px;
+}
+
+#button
+{
+	
+	margin-left:610px;
+}
+
+table
+{
+	margin-top:50px;
+}
+
