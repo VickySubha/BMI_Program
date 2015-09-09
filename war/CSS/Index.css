@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+
+
+ol li a:hover
+{
+	color:#df1212;
+	font-size:16px;
+	font-weight :bold;
+}
+
+.name
+{
+	background:#E8E8E8;
+	font-family: 'Poiret One', cursive;
+}
