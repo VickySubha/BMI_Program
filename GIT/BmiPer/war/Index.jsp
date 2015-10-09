@@ -8,8 +8,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../CSS/bootstrap.min.css">
 <link rel="stylesheet" href="../CSS/Index.css">
+<script type="text/javascript">
+   /* function hai() {
+    	var username="asdf@gmail.com";
+    	 $.ajax({
+        url : '/GetuserData?name1'=username,
+        
+        success : function(data) {
+            $('#result').html(data);
+            alert(data + "success");
+        
+        }
+    });
+	var username="asdf@gmail.com";
+    $.get('GetuserData',{name1:username},function(responseText) { 
+           $('#welcometext').text(responseText);         
+       });
+}*/
+</script>
 </head>
 <body>
+<h1 id="result"></h1>
+<input type=submit onclick="hai()" value="hai">
 	<%
 		if ((session.getAttribute("isLoggedIn") == null)
 				|| ((Boolean) session.getAttribute("isLoggedIn") == false)) {
@@ -43,14 +63,15 @@
 			</div>
 		</div>
 	</div>
-	<a href="../Logout">
+	<form action="../Logout" method=post>
+	<input type=text value="${name}" name="name1" hidden>
 		<button style="margin-right: 5px" class="btn btn-danger pull-right">Log
 			out</button>
-	</a>
+	
+	</form>
 	<h2 class="welcome">Welcome!!!</h2>
 	<h3 class="name">${name}</h3>
-	<h3 class="name">${name1}</h3>
-	<div class="row">
+		<div class="row">
 		<div class="col-md-8">
 			<h2 class="lead">
 				<b>Select your option!</b>
@@ -72,11 +93,17 @@
 			</div>
 		</div>
 	</div>
+	<h3 class="name" pull-right>You are logged in at ${name3}</h3>
 	<br>
 	<center>
 		<img src="../images/Weight_Lifter.jpg" class="img-responsive" />
 	</center>
-
+<form action="/GetuserData" method=post>
+	<input type=text value="${name}" name="name1" hidden>
+	<input type=text value="${name3}" name="name3" hidden>
+		<button style="margin-right: 5px" class="btn btn-danger pull-right">Recent activities</button>
+	
+	</form>
 
 	<div class="modal fade" id="contact">
 		<div class="modal-dialog">

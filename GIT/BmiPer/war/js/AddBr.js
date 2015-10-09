@@ -22,9 +22,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('.btn-danger').on('click',function(){
-		alert("You are logged out");
-	});
+	
 	
 	
 	$(window).resize(function(){

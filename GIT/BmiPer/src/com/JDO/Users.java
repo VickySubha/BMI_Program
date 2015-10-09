@@ -22,6 +22,4 @@ public class Users
 		this.name=name;
 		this.password=password;
 	}
-	
-	
 }

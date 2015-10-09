@@ -8,7 +8,7 @@
 	session.setAttribute("isLoggedIn", true);
 %> --%>
 <%
-	response.sendRedirect("https://accounts.google.com/o/oauth2/auth?redirect_uri=http://1-dot-oauthmvcc.appspot.com/log&response_type=code&client_id=640072184216-s3c9gq3r8erkhekb8rtgjhmjvh6blimj.apps.googleusercontent.com&approval_prompt=force&scope=email&access_type=online");
+	response.sendRedirect("https://accounts.google.com/o/oauth2/auth?redirect_uri=http://1-dot-oauthmvcc-1045.appspot.com/log&response_type=code&client_id=659856324305-8hi9lh0qk0en804b1odfcao3ii9fgn42.apps.googleusercontent.com&approval_prompt=force&scope=email&access_type=online");
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>authenticating...</title>
@@ -16,4 +16,4 @@
 <body>
 
 </body>
-</html>
+</html>								

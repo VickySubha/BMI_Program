@@ -8,16 +8,43 @@
 <title>Online BMI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../CSS/bootstrap.min.css">
-<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic'
+	rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="html2canvas.js"></script>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
 </head>
 <body>
+	<script type="text/javascript">
+	function generare(){
+		
+	$("#second").click(function(){
+		$("#contact").hide();
+		   $("#first").trigger('click');
+		   
+		   return false;
+		});}
+		function generate() {
+			
+			html2canvas(document.body, {
+				onrendered : function(canvas) {
+					//$("#contact").hide();
+					 
+					var img = canvas.toDataURL()
+					window.open(img);
+					//setTimeout(function() { $("#contact").(); }, 5000);
+					//$("#contact").show();
+				}
+			});
+			$("#contact").show();
+		}
+	</script>
 
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
-			 <a href="#" class="logo"><div class=" navbar-left navbar-brand">
-				
-				Body Mass Index
-			</div></a>
+			<a href="#" class="logo"><div class=" navbar-left navbar-brand">
+
+					Body Mass Index</div></a>
 			<div id="my-button">
 				<button class="navbar-toggle" data-toggle="collapse"
 					data-target=".navHeaderCollapse">
@@ -30,27 +57,27 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li id="home" class="active"><a href="#">HOME</a></li>
 					<li><a href="/Index">Calculate BMI</a></li>
-					<li id="#cntct"><a href="#contact" data-toggle="modal">Contact</a></li>
+					<li id="#cntct"><a href="#contact" data-toggle="modal">Feedback
+							& Support</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
+	<input type="submit" Onclick="generate() " id="first" value="Take a snapshot" hidden>
 	<a href="../SignUp.jsp">
 		<button type="button" class="btn btn-primary pull-right"
 			style="margin-right: 5px">Sign Up</button>
 	</a>
 
-							
-			<%
+
+	<%
 		if ((session.getAttribute("isLoggedIn") == null)
 				|| ((Boolean) session.getAttribute("isLoggedIn") == false)) {
-			
 	%>
-	
-		<a
-		href="../oauth.jsp"><button
-			type="button" class="btn btn-success pull-right"
-			style="margin-right: 5px">Login with Google</button></a>
+
+	<a href="../oauth.jsp"><button type="button"
+			class="btn btn-success pull-right" style="margin-right: 5px">Login
+			with Google</button></a>
 	<a href="../Login.jsp">
 		<button type="button" class="btn btn-success pull-right"
 			style="margin-right: 5px">Login</button>
@@ -104,12 +131,12 @@
 		</div>
 	</center>
 
-	<div class="modal fade" id="contact">
+	<div class="modal" id="contact">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4>
-						<b>Contact me</b>
+						<b>Feedback & Support</b>
 					</h4>
 				</div>
 				<div class="modal-body">
@@ -141,7 +168,7 @@
 							<button type="button" class="btn btn-default pull-right"
 								style="margin-right: 5px" data-dismiss="modal">Cancel</button>
 						</div>
-
+						<input type="submit" id="second" value="Take snapshot" Onclick="generare()">
 
 					</form>
 				</div>
